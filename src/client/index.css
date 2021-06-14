@@ -1,6 +1,24 @@
 /*
 this is a test css file, feel free to use other tool like styled component Or SCSS to do the style for your project.
 */
+
+
 h1 {
-  color: red;
+  text-align: center;
+  color: black;
+}
+
+h3 {
+  text-align: center;
+  color: black;
+}
+
+table{
+  margin-left: auto;
+  margin-right: auto;
+}
+
+select{
+  margin-left: auto;
+  margin-right: auto;
 }
