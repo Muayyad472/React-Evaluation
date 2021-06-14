@@ -31,10 +31,19 @@ const getHobbies = () => {
 const getListOfAgesOfUsersWith = (hobby) => {
   const dataAccessMethod = () => {
     // fill me in :) should return an arry of age count based on hobby.
-    return [
-      { age: 18, count: 2 },
-      { age: 12, count: 1 },
-    ];
+    var users = Object.keys(db.hobbiesOfUserByUsername).filter(function(key) {return db.hobbiesOfUserByUsername[key].includes(hobby)});
+    var userAge = {};
+    for(const user of users){
+      for(const [key, value] of Object.entries(db.usersById)){
+        if(value.username === user){
+          if (!userAge[`${value.age}`]){
+            userAge[`${value.age}`] = 0;
+          }
+          userAge[`${value.age}`] += 1;
+        }
+      }
+    }
+    return userAge;
   };
   return mockDBCall(dataAccessMethod);
 };
