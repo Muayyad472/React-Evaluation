@@ -2,12 +2,7 @@ import React, {useState, useEffect} from "react";
 
 function App(){
     const [userInfo, setUserInfo] = useState([])
-    useEffect(() => {
-        fetch('http://localhost:3000/userInfo')
-            .then(response => response.json())
-            .then(data => setUserInfo(data));
-    }, [])
-
+    
     let userData = []
 
     for(const [key, value] of Object.entries(userInfo)){
